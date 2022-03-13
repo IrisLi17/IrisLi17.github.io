@@ -2,37 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Preprints | Academic</title>
-    <link>https://example.com/preprint/</link>
-      <atom:link href="https://example.com/preprint/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://IrisLi17.github.io/preprint/</link>
+      <atom:link href="https://IrisLi17.github.io/preprint/index.xml" rel="self" type="application/rss+xml" />
     <description>Preprints</description>
     <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 28 Aug 2021 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>https://example.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <url>https://IrisLi17.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Preprints</title>
-      <link>https://example.com/preprint/</link>
+      <link>https://IrisLi17.github.io/preprint/</link>
     </image>
     
     <item>
       <title>A Benchmark for Low-Switching-Cost Reinforcement Learning</title>
-      <link>https://example.com/preprint/low-switch/</link>
+      <link>https://IrisLi17.github.io/preprint/low-switch/</link>
       <pubDate>Sat, 28 Aug 2021 00:00:00 +0000</pubDate>
-      <guid>https://example.com/preprint/low-switch/</guid>
+      <guid>https://IrisLi17.github.io/preprint/low-switch/</guid>
       <description></description>
     </item>
     
     <item>
       <title>D3PG: Deep Differentiable Deterministic Policy Gradients</title>
-      <link>https://example.com/preprint/d3pg/</link>
+      <link>https://IrisLi17.github.io/preprint/d3pg/</link>
       <pubDate>Wed, 25 Sep 2019 00:00:00 +0000</pubDate>
-      <guid>https://example.com/preprint/d3pg/</guid>
+      <guid>https://IrisLi17.github.io/preprint/d3pg/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Pretrain soft q-learning with imperfect demonstrations</title>
-      <link>https://example.com/preprint/pretrain_softq/</link>
+      <link>https://IrisLi17.github.io/preprint/pretrain_softq/</link>
       <pubDate>Thu, 09 May 2019 00:00:00 +0000</pubDate>
-      <guid>https://example.com/preprint/pretrain_softq/</guid>
+      <guid>https://IrisLi17.github.io/preprint/pretrain_softq/</guid>
       <description></description>
     </item>
     
