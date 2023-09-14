@@ -1,0 +1,1165 @@
+<!DOCTYPE html><html lang="en-us" >
+
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.4.0 for Hugo" />
+  
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Yunfei Li" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Bimanual manipulation is important for building intelligent robots that unlock richer skills than single arms. We consider a multi-object bimanual rearrangement task, where a reinforcement learning (RL) agent aims to jointly control two arms to rearrange these objects as fast as possible. Solving this task efficiently is challenging for an RL agent due to the requirement of discovering precise intra-arm coordination in exponentially large control space. We develop a symmetry-aware actor-critic framework that leverages the interchangeable roles of the two manipulators in the bimanual control setting to reduce the policy search space. To handle the compositionality over multiple objects, we augment training data with an object-centric relabeling technique. The overall approach produces an RL policy that can rearrange up to 8 objects with a success rate of over 70% in simulation. We deploy the policy to two Franka Panda arms and further show a successful demo on human-robot collaboration. Videos can be found at https://sites.google.com/view/bimanual." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://IrisLi17.github.io/publication/icra23_bimanual/" />
+
+  
+  
+  
+    <meta name="theme-color" content="#bbdefb" />
+  
+
+  
+  
+
+  
+
+  <link rel="stylesheet" href="/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css" media="print" onload="this.media='all'">
+
+  
+  
+  
+    
+    
+
+    
+    
+    
+    
+      
+      
+    
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.1b0e116046af73d16142214bba82f8a5.css" />
+
+  
+
+
+
+  
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/manifest.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_3.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_3.png" />
+
+  <link rel="canonical" href="https://IrisLi17.github.io/publication/icra23_bimanual/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+    
+  
+  
+
+  
+  
+    
+    
+  
+  <meta property="twitter:card" content="summary" />
+  
+  <meta property="og:site_name" content="Academic" />
+  <meta property="og:url" content="https://IrisLi17.github.io/publication/icra23_bimanual/" />
+  <meta property="og:title" content="Efficient Bimanual Handover and Rearrangement via Symmetry-Aware Actor-Critic Learning | Academic" />
+  <meta property="og:description" content="Bimanual manipulation is important for building intelligent robots that unlock richer skills than single arms. We consider a multi-object bimanual rearrangement task, where a reinforcement learning (RL) agent aims to jointly control two arms to rearrange these objects as fast as possible. Solving this task efficiently is challenging for an RL agent due to the requirement of discovering precise intra-arm coordination in exponentially large control space. We develop a symmetry-aware actor-critic framework that leverages the interchangeable roles of the two manipulators in the bimanual control setting to reduce the policy search space. To handle the compositionality over multiple objects, we augment training data with an object-centric relabeling technique. The overall approach produces an RL policy that can rearrange up to 8 objects with a success rate of over 70% in simulation. We deploy the policy to two Franka Panda arms and further show a successful demo on human-robot collaboration. Videos can be found at https://sites.google.com/view/bimanual." /><meta property="og:image" content="https://IrisLi17.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" />
+    <meta property="twitter:image" content="https://IrisLi17.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2023-05-30T00:00:00&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2023-05-30T00:00:00&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://IrisLi17.github.io/publication/icra23_bimanual/"
+  },
+  "headline": "Efficient Bimanual Handover and Rearrangement via Symmetry-Aware Actor-Critic Learning",
+  
+  "datePublished": "2023-05-30T00:00:00Z",
+  "dateModified": "2023-05-30T00:00:00Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Yunfei Li"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Academic",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://IrisLi17.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"
+    }
+  },
+  "description": "Bimanual manipulation is important for building intelligent robots that unlock richer skills than single arms. We consider a multi-object bimanual rearrangement task, where a reinforcement learning (RL) agent aims to jointly control two arms to rearrange these objects as fast as possible. Solving this task efficiently is challenging for an RL agent due to the requirement of discovering precise intra-arm coordination in exponentially large control space. We develop a symmetry-aware actor-critic framework that leverages the interchangeable roles of the two manipulators in the bimanual control setting to reduce the policy search space. To handle the compositionality over multiple objects, we augment training data with an object-centric relabeling technique. The overall approach produces an RL policy that can rearrange up to 8 objects with a success rate of over 70% in simulation. We deploy the policy to two Franka Panda arms and further show a successful demo on human-robot collaboration. Videos can be found at https://sites.google.com/view/bimanual."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Efficient Bimanual Handover and Rearrangement via Symmetry-Aware Actor-Critic Learning | Academic</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper  dark " data-wc-page-id="cd1da48cd46d5cce39b47aade598f4b1" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.d333d96014f7bcfa311294a92ace0d60.js"></script>
+
+  
+
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="header--fixed">
+  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+    <div class="container-xl">
+
+      
+      <div class="d-none d-lg-inline-flex">
+        <a class="navbar-brand" href="/">Academic</a>
+      </div>
+      
+
+      
+      <button type="button" class="navbar-toggler" data-toggle="collapse"
+              data-target="#navbar-content" aria-controls="navbar-content" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars"></i></span>
+      </button>
+      
+
+      
+      <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+        <a class="navbar-brand" href="/">Academic</a>
+      </div>
+      
+
+      
+      
+      <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+        
+        <ul class="navbar-nav d-md-inline-flex">
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#about"><span>Home</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#publications"><span>Publications</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+              
+              
+              
+                
+              
+              
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/#projects"><span>Projects</span></a>
+          </li>
+
+          
+          
+
+          
+
+          
+          
+          
+            
+          
+
+          
+
+          
+          
+          
+          
+
+          
+            
+              
+              
+            
+            
+          
+
+          <li class="nav-item">
+            <a class="nav-link " href="/uploads/Resume.pdf"><span>CV</span></a>
+          </li>
+
+          
+          
+
+        
+
+          
+        </ul>
+      </div>
+
+      <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+        
+        
+          
+        
+
+        
+        
+
+        
+        
+        
+
+        
+        
+
+      </ul>
+
+    </div>
+  </nav>
+</header>
+
+
+  </div>
+
+  <div class="page-body">
+    
+    
+    
+
+    
+
+
+
+
+
+
+
+
+<div class="pub">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Efficient Bimanual Handover and Rearrangement via Symmetry-Aware Actor-Critic Learning</h1>
+
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+  <span class="author-highlighted">
+      Yunfei Li</span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Equal contribution"></i>, <span >
+      Chaoyi Pan</span><i class="author-notes fas fa-info-circle" data-toggle="tooltip" title="Equal contribution"></i>, <span >
+      Huazhe Xu</span>, <span >
+      Xiaolong Wang</span>, <span >
+      Yi Wu</span>
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    May 2023
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="/publication/icra23_bimanual/bimanual_handover.pdf" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://sites.google.com/view/bimanual" target="_blank" rel="noopener">
+  Project
+</a>
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    
+    <h3>Abstract</h3>
+    <p class="pub-abstract">Bimanual manipulation is important for building intelligent robots that unlock richer skills than single arms. We consider a multi-object bimanual rearrangement task, where a reinforcement learning (RL) agent aims to jointly control two arms to rearrange these objects as fast as possible. Solving this task efficiently is challenging for an RL agent due to the requirement of discovering precise intra-arm coordination in exponentially large control space. We develop a symmetry-aware actor-critic framework that leverages the interchangeable roles of the two manipulators in the bimanual control setting to reduce the policy search space. To handle the compositionality over multiple objects, we augment training data with an object-centric relabeling technique. The overall approach produces an RL policy that can rearrange up to 8 objects with a success rate of over 70% in simulation. We deploy the policy to two Franka Panda arms and further show a successful demo on human-robot collaboration. Videos can be found at <a href="https://sites.google.com/view/bimanual">https://sites.google.com/view/bimanual</a>.</p>
+    
+
+    
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Type</div>
+          <div class="col-12 col-md-9">
+            <a href="/publication/#1">
+              Conference paper
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-10">
+        <div class="row">
+          <div class="col-12 col-md-3 pub-row-heading">Publication</div>
+          <div class="col-12 col-md-9">In <em>International Conference on Robotics and Automation</em></div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+    <div class="d-md-none space-below"></div>
+    
+
+    <div class="space-below"></div>
+
+    <div class="article-style"></div>
+
+    
+
+
+
+
+
+
+<div class="share-box">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://IrisLi17.github.io/publication/icra23_bimanual/&amp;text=Efficient%20Bimanual%20Handover%20and%20Rearrangement%20via%20Symmetry-Aware%20Actor-Critic%20Learning" target="_blank" rel="noopener" class="share-btn-twitter" aria-label="twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://IrisLi17.github.io/publication/icra23_bimanual/&amp;t=Efficient%20Bimanual%20Handover%20and%20Rearrangement%20via%20Symmetry-Aware%20Actor-Critic%20Learning" target="_blank" rel="noopener" class="share-btn-facebook" aria-label="facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Efficient%20Bimanual%20Handover%20and%20Rearrangement%20via%20Symmetry-Aware%20Actor-Critic%20Learning&amp;body=https://IrisLi17.github.io/publication/icra23_bimanual/" target="_blank" rel="noopener" class="share-btn-email" aria-label="envelope">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://IrisLi17.github.io/publication/icra23_bimanual/&amp;title=Efficient%20Bimanual%20Handover%20and%20Rearrangement%20via%20Symmetry-Aware%20Actor-Critic%20Learning" target="_blank" rel="noopener" class="share-btn-linkedin" aria-label="linkedin-in">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Efficient%20Bimanual%20Handover%20and%20Rearrangement%20via%20Symmetry-Aware%20Actor-Critic%20Learning%20https://IrisLi17.github.io/publication/icra23_bimanual/" target="_blank" rel="noopener" class="share-btn-whatsapp" aria-label="whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://IrisLi17.github.io/publication/icra23_bimanual/&amp;title=Efficient%20Bimanual%20Handover%20and%20Rearrangement%20via%20Symmetry-Aware%20Actor-Critic%20Learning" target="_blank" rel="noopener" class="share-btn-weibo" aria-label="weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://IrisLi17.github.io/"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_hua401f196c560bb4642ab319c583a0aa3_2041442_270x270_fill_q75_lanczos_center.jpg" alt="Yunfei Li"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://IrisLi17.github.io/">Yunfei Li</a></h5>
+      <h6 class="card-subtitle">PhD student</h6>
+      <p class="card-text">My research interests include reinforcement learning and robotics.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:yunfeili.cloud@gmail.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://scholar.google.com/citations?user=WvtCacIAAAAJ" target="_blank" rel="noopener">
+        <i class="fas fa-graduation-cap"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/IrisLi17" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+</div>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+
+
+
+
+
+  
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-themes" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+      
+
+    
+    <script src="/js/vendor-bundle.min.b73dfaac3b6499dc997741748a7c3fe2.js"></script>
+
+    
+    
+    
+      
+      
+
+      
+      
+
+      
+
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    
+
+    
+
+    
+    
+    
+    <script id="page-data" type="application/json">{"use_headroom":true}</script>
+
+    
+    
+      <script src="/js/wowchemy-headroom.79343bd00de25e04f03b6af2819f8643.js" type="module"></script>
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/en/js/wowchemy.min.0879156d664caf1dd0b240fa1b246a30.js"></script>
+
+    
+    
+    
+    
+    
+    
+      
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <script src="/js/wowchemy-publication.ee00aa4e09ee62617fe2dc15bfcb3f7b.js" type="module"></script>
+
+
+
+
+
+
+</body>
+</html>
