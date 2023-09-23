@@ -29,6 +29,14 @@
     </item>
     
     <item>
+      <title>Beyond Information Gain: An Empirical Benchmark for Low-Switching-Cost Reinforcement Learning</title>
+      <link>https://IrisLi17.github.io/publication/tmlr/</link>
+      <pubDate>Sun, 01 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://IrisLi17.github.io/publication/tmlr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Phasic Self-Imitative Reduction for Sparse-Reward Goal-Conditioned Reinforcement Learning</title>
       <link>https://IrisLi17.github.io/publication/icml22_pair/</link>
       <pubDate>Sun, 15 May 2022 00:00:00 +0000</pubDate>
@@ -66,25 +74,6 @@
       <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
       <guid>https://IrisLi17.github.io/publication/iclr21_sir/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>An example conference paper</title>
-      <link>https://IrisLi17.github.io/publication/example/</link>
-      <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>https://IrisLi17.github.io/publication/example/</guid>
-      <description>&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&#34;alert alert-note&#34;&gt;
-  &lt;div&gt;
-    Create your slides in Markdown - click the &lt;em&gt;Slides&lt;/em&gt; button to check out the example.
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;p&gt;Supplementary notes can be added here, including &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;code, math, and images&lt;/a&gt;.&lt;/p&gt;
-</description>
     </item>
     
   </channel>
