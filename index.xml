@@ -33,6 +33,22 @@
     </item>
     
     <item>
+      <title>Learning Agile Bipedal Motions on a Quadrupedal Robot</title>
+      <link>https://IrisLi17.github.io/publication/icra24/</link>
+      <pubDate>Tue, 30 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://IrisLi17.github.io/publication/icra24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Accelerate Multi-Agent Reinforcement Learning in Zero-Sum Games with Subgame Curriculum Learning</title>
+      <link>https://IrisLi17.github.io/publication/aaai24/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://IrisLi17.github.io/publication/aaai24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Efficient Bimanual Handover and Rearrangement via Symmetry-Aware Actor-Critic Learning</title>
       <link>https://IrisLi17.github.io/publication/icra23_bimanual/</link>
       <pubDate>Tue, 30 May 2023 00:00:00 +0000</pubDate>
@@ -45,6 +61,14 @@
       <link>https://IrisLi17.github.io/publication/aamas23/</link>
       <pubDate>Mon, 29 May 2023 00:00:00 +0000</pubDate>
       <guid>https://IrisLi17.github.io/publication/aamas23/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Self-Generating Data For Goal-Conditioned Compositional Problems</title>
+      <link>https://IrisLi17.github.io/preprint/rst/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      <guid>https://IrisLi17.github.io/preprint/rst/</guid>
       <description></description>
     </item>
     

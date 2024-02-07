@@ -5,12 +5,28 @@
     <link>https://IrisLi17.github.io/publication/</link>
       <atom:link href="https://IrisLi17.github.io/publication/index.xml" rel="self" type="application/rss+xml" />
     <description>Publications</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 30 May 2023 00:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Tue, 30 Jan 2024 00:00:00 +0000</lastBuildDate>
     <image>
       <url>https://IrisLi17.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
       <title>Publications</title>
       <link>https://IrisLi17.github.io/publication/</link>
     </image>
+    
+    <item>
+      <title>Learning Agile Bipedal Motions on a Quadrupedal Robot</title>
+      <link>https://IrisLi17.github.io/publication/icra24/</link>
+      <pubDate>Tue, 30 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://IrisLi17.github.io/publication/icra24/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Accelerate Multi-Agent Reinforcement Learning in Zero-Sum Games with Subgame Curriculum Learning</title>
+      <link>https://IrisLi17.github.io/publication/aaai24/</link>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>https://IrisLi17.github.io/publication/aaai24/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Efficient Bimanual Handover and Rearrangement via Symmetry-Aware Actor-Critic Learning</title>
